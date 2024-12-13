@@ -39,7 +39,7 @@ const Calculator = ()=>{
     return(
         <div className="border w-full min-h-screen text-[#857c7c]" >
             
-            <div className="appbox flex justify-between border bg-center bg-cover h-screen "
+            <div className="appbox flex max-sm:flex-col justify-between border bg-center bg-cover h-screen "
     style={{ backgroundImage: `url(${bg})` }}>
                 <img src={logo} className='h-50 w-20 absolute'></img>
                 <h1 className='absolute right-[40%] top-3 text-[30px] font-bold'>Position Size Calculator</h1>

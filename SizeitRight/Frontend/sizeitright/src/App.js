@@ -1,10 +1,11 @@
 import Calculator from "./components/calculator";
+import Response from "./components/responsive";
 
 
 function App() {
   return (
     <div className="App">
-      <Calculator/>
+        <Calculator/>
     </div>
   );
 }
