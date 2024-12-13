@@ -4,7 +4,7 @@ import { Percent } from 'lucide-react';
 import { Play } from 'lucide-react';
 import { ShieldX , TicketCheck, CircleOff ,Dumbbell} from 'lucide-react';
 import bg from '../assets/bg2.jpg'
-
+import logo from '../assets/logo.jpg'
 
 const Calculator = ()=>{
 
@@ -37,9 +37,14 @@ const Calculator = ()=>{
 
 
     return(
-        <div className="border border-[#ffffff] w-full h-screen text-[#ffffff]" >
-            <div className="appbox flex justify-between border bg-center bg-cover h-screen"
+        <div className="border w-full min-h-screen text-[#857c7c]" >
+            
+            <div className="appbox flex justify-between border bg-center bg-cover h-screen "
     style={{ backgroundImage: `url(${bg})` }}>
+                <img src={logo} className='h-50 w-20 absolute'></img>
+                <h1 className='absolute right-[40%] top-3 text-[30px] font-bold'>Position Size Calculator</h1>
+
+
                 <div className="inputbox  flex flex-col justify-center items-center m-20 gap-[8px] p-10 border border-[#857c7c] w-[450px]">
                     <div className="account">
                         <label className='flex gap-2 p-2 font-bold text-[20px]'><Activity/>Account Size</label>
@@ -68,7 +73,7 @@ const Calculator = ()=>{
                     <div className="entry border border-black  rounded-[10px] bg-gradient-to-r from-transparent to-blue-500 text-white font-bold text-[25px] h-[75px] w-full flex p-5 items-center">
                         <h1 className='flex gap-3'><TicketCheck className='w-100'/>Entry Point <span><h1 className='text-black '>{entry}</h1></span></h1>
                     </div>
-                    <div className="sl border border-black  text-white h-[75px] bg-gradient-to-r from-transparent to-blue-500 font-bold text-[25px] h-[75px] w-full flex p-5 items-center">
+                    <div className="sl border border-black  text-white h-[75px] bg-gradient-to-r from-transparent to-blue-600 font-bold text-[25px] h-[75px] w-full flex p-5 items-center">
                         <h1 className='flex gap-3'><CircleOff/>SL<span className='text-black'>{sl}</span></h1>
 
                     </div>

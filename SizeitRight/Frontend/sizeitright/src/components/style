@@ -1,0 +1,95 @@
+import React from 'react';
+import { Activity, Percent, Play, ShieldX, TicketCheck, CircleOff, Dumbbell } from 'lucide-react';
+
+const Calculator = () => {
+  // ... State management remains the same ...
+
+  return (
+    // CHANGE 1: Removed fixed height and width, added min-height for responsiveness
+    // Old: <div className="border flex w-full h-screen">
+    <div className="min-h-screen w-full bg-gradient-to-r from-gray-100 to-gray-200 text-gray-700">
+      
+      // CHANGE 2: Added container with auto margins and responsive padding
+      // New: Helps center content and maintain readable width on large screens
+      <div className="container mx-auto px-4 py-8">
+        
+        // CHANGE 3: Simplified header, made text responsive
+        // Old: <h1 className='absolute right-[40%] top-3 text-[30px]'>
+        <div className="relative flex justify-center mb-8">
+          <h1 className="text-2xl md:text-3xl font-bold text-center">
+            Position Size Calculator
+          </h1>
+        </div>
+
+        // CHANGE 4: Flexible layout container that switches between column and row
+        // Old: Used fixed positioning and margins
+        // New: Uses flex layout that adapts to screen size
+        <div className="flex flex-col lg:flex-row gap-8 justify-center items-start">
+          
+          // CHANGE 5: Input section responsiveness
+          // Old: Fixed width of 450px
+          // New: Responsive width with max-width constraint
+          <div className="w-full lg:w-1/2 max-w-md mx-auto">
+            <div className="bg-white/80 backdrop-blur-sm rounded-lg shadow-lg p-6 space-y-4">
+              
+              // CHANGE 6: Improved input group spacing and alignment
+              // Old: Used fixed gap and padding
+              // New: Uses consistent spacing utilities
+              <div className="space-y-3">
+                <label className="flex items-center gap-2 font-bold text-lg">
+                  <Activity className="w-5 h-5" />
+                  Account Size
+                </label>
+                // CHANGE 7: Enhanced input styling
+                // Old: Fixed width and height
+                // New: Full width with consistent padding
+                <input
+                  type="number"
+                  className="w-full px-4 py-2 rounded-lg border bg-transparent"
+                  placeholder="Enter Account Size"
+                />
+              </div>
+
+              // ... Similar changes for other input groups ...
+
+              // CHANGE 8: Improved button styling
+              // Old: Fixed width and height
+              // New: Full width with consistent padding
+              <button
+                onClick={calculateEntry}
+                className="w-full py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+              >
+                Calculate
+              </button>
+            </div>
+          </div>
+
+          // CHANGE 9: Results section responsiveness
+          // Old: Fixed width of 500px
+          // New: Responsive width with max-width constraint
+          <div className="w-full lg:w-1/2 max-w-md mx-auto">
+            <div className="bg-white/80 backdrop-blur-sm rounded-lg shadow-lg p-6 space-y-4">
+              
+              // CHANGE 10: Improved results display
+              // Old: Used complex gradient backgrounds with fixed heights
+              // New: Simplified gradients with consistent padding
+              <div className="space-y-4">
+                <div className="bg-gradient-to-r from-blue-100 to-blue-200 rounded-lg p-4">
+                  <div className="flex items-center gap-3">
+                    <TicketCheck className="w-6 h-6 text-blue-600" />
+                    <span className="font-bold text-lg">Entry Point:</span>
+                    <span className="text-lg">{entry}</span>
+                  </div>
+                </div>
+
+                // ... Similar changes for other result displays ...
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Calculator;
